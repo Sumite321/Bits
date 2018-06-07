@@ -9,7 +9,7 @@ package OODRefCwk;
  *
  * @author admin
  */
-public abstract class Staff {
+public class Staff {
     
     public String UName;
     public int experience;

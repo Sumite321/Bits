@@ -9,6 +9,6 @@ package OODRefCwk;
  *
  * @author admin
  */
-public class Technician {
+public class Technician extends Staff{
     
 }
