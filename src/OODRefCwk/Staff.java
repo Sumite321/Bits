@@ -29,25 +29,33 @@ public abstract class Staff {
         return UName;
     }
 
-    public abstract void setUName(String UName);
-
     public int getExperience() {
         return experience;
     }
 
-    public abstract void setExperience(int experience);
+    public void setUName(String UName) {
+        this.UName = UName;
+    }
+
+    public void setExperience(int experience) {
+        this.experience = experience;
+    }
+
+    public void setRetainer(int retainer) {
+        this.retainer = retainer;
+    }
+
+    public void setRate(double rate) {
+        this.rate = rate;
+    }
 
     public int getRetainer() {
         return retainer;
     }
 
-    public abstract void setRetainer(int retainer);
-
     public double getRate() {
         return rate;
     }
-
-    public abstract void setRate(double rate);
 
     public StaffState getState() {
         return state;
@@ -56,9 +64,5 @@ public abstract class Staff {
     public void setState(StaffState state) {
         this.state = state;
     }
-    
-    
-    
-    
-    
+
 }

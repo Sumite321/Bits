@@ -13,6 +13,9 @@ import java.io.*;
 public class ITManager  implements Management 
 {
 // Declare fields
+    private String ManagerName;
+    private double budget;
+    
 
 //**************** BITS ************************** 
     /** Constructor requires the name of the trainee manager and initial budget. Staff
@@ -20,8 +23,10 @@ public class ITManager  implements Management
      * @param trainee the name of the trainee manager running the simulation
      * @param budget the initial budget allocated to the project account
      */
-     public ITManager(String trainee, int budget)
+     public ITManager(String trainee, double budget)
      {
+        this.ManagerName = trainee;
+        this.budget = budget;
      }
     
     
@@ -43,7 +48,7 @@ public class ITManager  implements Management
      * @returns the amount of money in the account
      */
     public double getAccount(){
-        return -1;
+        return budget;
     }
     
     /** Returns true if project account <=0 and the team has no staff 
