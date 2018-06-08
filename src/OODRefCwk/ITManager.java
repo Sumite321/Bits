@@ -44,7 +44,17 @@ public class ITManager  implements Management
      * team,(or, "No staff" if team is empty)
      **/
     public String toString(){
-        return "";
+        
+        String isOverdrawn = "Project is not overdrawn";
+        
+        if(isOverdrawn()){
+            isOverdrawn = "Project is overdrawn";
+        }
+        
+        return "Manager name: " + ManagerName + "\n" +
+                "Available funds: " + budget + "\n" +
+                "Team members: \n" + getTeam() + "\n" + 
+                isOverdrawn;
     }
     
     
@@ -62,7 +72,7 @@ public class ITManager  implements Management
      */
     public boolean isOverdrawn(){
         
-        if(getAccount()<=0){return true;}
+        if(getAccount()<=0 && teamMembers.isEmpty()){return true;}
         
         return false;
     }
@@ -150,7 +160,8 @@ public class ITManager  implements Management
             availableStaff.append("Staff name: " + s.getUName() + " " + 
                         "Experience level: " + s.getExperience() + " " +
                         "Retainer: " + s.getRetainer() + " " + 
-                        "Hourly rate " + s.getRate());
+                        "Hourly rate " + s.getRate() + " " +
+                        "State: " + s.getState().toString() + "\n");
         }
         
         return availableStaff.toString();
@@ -176,11 +187,13 @@ public class ITManager  implements Management
 
         if (staffExists(name)) { // check if the staff exists
             Staff toHire = getStaffReference(name); // get the object reference to variable
-            if (toHire.getRetainer() < getAccount()) { //check if there is enough money
+            if (toHire.getRetainer() <= getAccount()) { //check if there is enough money
                 budget = budget - toHire.getRetainer(); // deduct the retainer from account
                 toHire.setState(StaffState.WORKING);
                 teamMembers.put(toHire.getUName(), toHire);
                 message = toHire.getUName() + "has been hired for " + toHire.getRetainer() + "\n" + "Current account balance: " + getAccount();
+            }else{
+            message = "Not enough money";
             }
         }
 
@@ -224,7 +237,7 @@ public class ITManager  implements Management
                         + "Experience level: " + s.getExperience() + " "
                         + "Retainer: " + s.getRetainer() + " "
                         + "Hourly rate: " + s.getRate() + " "
-                        + "State: " + s.getState().toString());
+                        + "State: " + s.getState().toString() + "\n");
             }
         }
         return showTeam.toString();
@@ -258,16 +271,29 @@ public class ITManager  implements Management
     
      //****************** private methods for Task 6.1 functionality*******************
     //*******************************************************************************
-    private void setupStaff()
-    {
+    private void setupStaff() {
         // add all from the specs
         //Staff alan = new Analyst("Alan",2,300,30,StaffState.AVAILABLE,false);
-        
-       System.out.println("Now adding objects to the collections...");
-        staffToHire.put("Alan", new Analyst("Alan",2,300,30,false));
-        
+
+        System.out.println("Now adding objects to the collections...");
+        staffToHire.put("Alan", new Analyst("Alan", 2, 300, 30, false));
+        staffToHire.put("Bob", new Technician("Bob", 2, 100, 30, false));
+        staffToHire.put("Ceri", new Technician("Ceri", 4, 250, 40, true));
+        staffToHire.put("Dan", new Programmer("Dan", 2, 300, 20));
+        staffToHire.put("Ela", new Programmer("Ela", 7, 200, 20));
+        staffToHire.put("Fela", new Analyst("Fela", 6, 300, 90, false));
+        staffToHire.put("Gita", new Programmer("Gita", 2, 200, 20));
+        staffToHire.put("Heia", new Technician("Heia", 8, 450, 40, false));
+        staffToHire.put("Ian", new Analyst("Ian", 4, 300, 60, false));
+        System.out.println("Setting all staff available");
+
+        for (Staff makeAvailable : staffToHire.values()) {
+            makeAvailable.setState(StaffState.AVAILABLE);
+
+        }
+
     }
-    
+
     private void setupTasks()
     {
         // add all from the specs
