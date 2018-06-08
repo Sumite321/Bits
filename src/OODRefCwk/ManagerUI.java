@@ -34,7 +34,7 @@ public class ManagerUI
                 }
                 else if (choice == 2)
                 {
-                    //implement for 6.3
+                    System.out.println(man1.getAvailableStaff());
                 }
                 else if (choice == 3)
                 {
@@ -51,7 +51,7 @@ public class ManagerUI
                 } 
                 else if (choice == 4)
                 {
-                    // implement for 6.3
+                    System.out.println(man1.getTeam());
                 }
                 else if (choice == 5)
                 {
@@ -60,8 +60,8 @@ public class ManagerUI
                 else if (choice == 6)
                 {   
                     System.out.println("Enter number of the job");
-                    
-                    // implement for 6.3
+                    String jobn = (myIn.nextLine()).trim();
+                    man1.doJob(Integer.valueOf(jobn));
                 }              
                 else if (choice == 7)
                 {

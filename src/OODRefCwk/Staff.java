@@ -11,18 +11,17 @@ package OODRefCwk;
  */
 public abstract class Staff {
     
-    public String UName;
-    public int experience;
-    public int retainer;
-    public double rate;
-    public StaffState state;
+    private String UName;
+    private int experience;
+    private int retainer;
+    private double rate;
+    private StaffState state;
 
-    public Staff(String UName, int experience, int retainer, double rate, StaffState state) {
+    public Staff(String UName, int experience, int retainer, double rate) {
         this.UName = UName;
         this.experience = experience;
         this.retainer = retainer;
         this.rate = rate;
-        this.state = state;
     }
 
     public String getUName() {

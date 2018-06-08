@@ -13,8 +13,8 @@ public class Analyst extends Staff{
 
     private boolean canProgram;
     
-    public Analyst(String UName, int experience, int retainer, double rate, StaffState state, boolean program) {
-        super(UName, experience, retainer, rate, state);
+    public Analyst(String UName, int experience, int retainer, double rate, boolean program) {
+        super(UName, experience, retainer, rate);
         this.canProgram = program;
     }
 }

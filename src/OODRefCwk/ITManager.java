@@ -14,8 +14,10 @@ public class ITManager  implements Management
 {
 // Declare fields
     private String ManagerName;
-    private double budget;
-    
+    private int budget;
+    private HashMap<String,Job> allJobs = new HashMap<>();// one collection for all jobs
+    private HashMap<String,Staff> staffToHire = new HashMap<>();// one collection for all hirable staff
+    private HashMap<String,Staff> teamMembers = new HashMap<>();// one collection for all team members
 
 //**************** BITS ************************** 
     /** Constructor requires the name of the trainee manager and initial budget. Staff
@@ -23,10 +25,12 @@ public class ITManager  implements Management
      * @param trainee the name of the trainee manager running the simulation
      * @param budget the initial budget allocated to the project account
      */
-     public ITManager(String trainee, double budget)
+     public ITManager(String trainee, int budget)
      {
         this.ManagerName = trainee;
         this.budget = budget;
+        setupTasks();
+        setupStaff();
      }
     
     
@@ -57,6 +61,9 @@ public class ITManager  implements Management
      * who can leave. 
      */
     public boolean isOverdrawn(){
+        
+        if(getAccount()<=0){return true;}
+        
         return false;
     }
 
@@ -88,17 +95,68 @@ public class ITManager  implements Management
      * in the parameter
      **/
     public String getStaffMember(String name){
-        return "";
+        
+        StringBuilder staffDetails = new StringBuilder();
+
+        for (Staff s : staffToHire.values()) {
+            if (staffExists(name)) {
+                staffDetails.append("Staff name: " + s.getUName() + " " + 
+                        "Experience level: " + s.getExperience() + " " +
+                        "Retainer: " + s.getRetainer() + " " + 
+                        "Hourly rate " + s.getRate());
+            } else {
+                staffDetails.append("No staff found");
+            }
+        }
+
+        return staffDetails.toString();
+    }
+    
+    private boolean staffExists(String name) {
+
+        boolean found = false;
+
+        for (Staff s : staffToHire.values()) {
+            if (s.getUName().equals(name)) {
+                found = true;
+            }
+        }
+        return found;
+
+    }
+    
+    private Staff getStaffReference(String name) {
+
+        Staff toReturn = null;
+        
+        if (staffExists(name)) {
+            for (Staff s : staffToHire.values()) {
+                if (s.getUName().equals(name)) {
+                    toReturn = s;
+                }
+            }
+        }
+        return toReturn;
     }
     
        /**Returns a String representation of all staff available for hire
      * @return a String representation of all staff available for hire
      **/
     public String getAvailableStaff(){
-        return "";
+        
+        StringBuilder availableStaff = new StringBuilder();
+        
+        for(Staff s: staffToHire.values()){
+            availableStaff.append("Staff name: " + s.getUName() + " " + 
+                        "Experience level: " + s.getExperience() + " " +
+                        "Retainer: " + s.getRetainer() + " " + 
+                        "Hourly rate " + s.getRate());
+        }
+        
+        return availableStaff.toString();
     }
     
-  
+    
  // ***************** Team Staff ************************   
 
     /** Allows staff to be added to the team, if there is enough  
@@ -113,6 +171,23 @@ public class ITManager  implements Management
      * the staff name and state of the project account
      **/        
     public String hireStaff(String name){
+        
+        
+        System.out.println(getAvailableStaff());
+        
+        // check if staff exists
+        System.out.println(getStaffMember(name));
+        
+        if(staffExists(name)){ // check if the staff exists
+            Staff toHire = getStaffReference(name); // get the object reference to variable
+            if(toHire.getRetainer() < getAccount()){ //check if there is enough money
+                budget = budget - toHire.getRetainer(); // deduct the retainer from account
+                
+            }
+        
+        }
+        
+
         return "";
     }
     
@@ -124,7 +199,15 @@ public class ITManager  implements Management
      * false otherwise.
      **/
     public boolean isInTeam(String name){
-        return false;
+      
+        boolean found = false;
+        
+        for (Staff s : teamMembers.values()) {
+            if (s.getUName().equals(name)) {
+                found = true;
+            } 
+        }
+        return found;
     }
 
     
@@ -133,7 +216,17 @@ public class ITManager  implements Management
      * @return a String representation of the staff in the project team
      **/
     public String getTeam(){
-        return "";
+        
+        StringBuilder sb = new StringBuilder();
+        
+        if(teamMembers.isEmpty()){
+            sb.append("No staff hired");
+        }else{
+            // go through each member of the team with their respective details
+        
+        }
+        
+        return sb.toString();
     }
 
 
@@ -167,11 +260,19 @@ public class ITManager  implements Management
     //*******************************************************************************
     private void setupStaff()
     {
+        // add all from the specs
+        //Staff alan = new Analyst("Alan",2,300,30,StaffState.AVAILABLE,false);
+        
+       System.out.println("Now adding objects to the collections...");
+        staffToHire.put("Alan", new Analyst("Alan",2,300,30,false));
         
     }
     
     private void setupTasks()
     {
+        // add all from the specs
         
+        System.out.println("Now adding objects to the collections...");
+
     }
 }
