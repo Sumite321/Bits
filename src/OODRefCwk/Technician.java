@@ -11,10 +11,10 @@ package OODRefCwk;
  */
 public class Technician extends Staff{
     
-    private boolean isCisco;
+    private boolean isCiscoo;
 
     public Technician(String UName, int experience, int retainer, double rate,boolean isC) {
         super(UName, experience, retainer, rate);
-        this.isCisco = isC;
+        this.isCiscoo = isC;
     }  
 }
