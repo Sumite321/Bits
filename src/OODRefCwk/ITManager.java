@@ -170,25 +170,21 @@ public class ITManager  implements Management
      * account,"Hired" if staff are hired.All messages should include 
      * the staff name and state of the project account
      **/        
-    public String hireStaff(String name){
-        
-        
-        System.out.println(getAvailableStaff());
-        
-        // check if staff exists
-        System.out.println(getStaffMember(name));
-        
-        if(staffExists(name)){ // check if the staff exists
-            Staff toHire = getStaffReference(name); // get the object reference to variable
-            if(toHire.getRetainer() < getAccount()){ //check if there is enough money
-                budget = budget - toHire.getRetainer(); // deduct the retainer from account
-                
-            }
-        
-        }
-        
+    public String hireStaff(String name) {
 
-        return "";
+        String message = "No staff found";
+
+        if (staffExists(name)) { // check if the staff exists
+            Staff toHire = getStaffReference(name); // get the object reference to variable
+            if (toHire.getRetainer() < getAccount()) { //check if there is enough money
+                budget = budget - toHire.getRetainer(); // deduct the retainer from account
+                toHire.setState(StaffState.WORKING);
+                teamMembers.put(toHire.getUName(), toHire);
+                message = toHire.getUName() + "has been hired for " + toHire.getRetainer() + "\n" + "Current account balance: " + getAccount();
+            }
+        }
+
+        return message;
     }
     
         
@@ -215,20 +211,24 @@ public class ITManager  implements Management
      * (including those on holiday), or the message "No staff hired"
      * @return a String representation of the staff in the project team
      **/
-    public String getTeam(){
-        
-        StringBuilder sb = new StringBuilder();
-        
-        if(teamMembers.isEmpty()){
-            sb.append("No staff hired");
-        }else{
-            // go through each member of the team with their respective details
-        
-        }
-        
-        return sb.toString();
-    }
+    public String getTeam() {
 
+        StringBuilder showTeam = new StringBuilder();
+
+        if (teamMembers.isEmpty()) {
+            showTeam.append("No staff hired");
+        } else {
+
+            for (Staff s : teamMembers.values()) {
+                showTeam.append("Staff name: " + s.getUName() + " "
+                        + "Experience level: " + s.getExperience() + " "
+                        + "Retainer: " + s.getRetainer() + " "
+                        + "Hourly rate: " + s.getRate() + " "
+                        + "State: " + s.getState().toString());
+            }
+        }
+        return showTeam.toString();
+    }
 
 // ***************** Simulation ************************ 
     /** Retrieves the job with the job reference number, or returns "No 
