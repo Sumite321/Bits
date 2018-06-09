@@ -7,7 +7,7 @@ package OODRefCwk;
 
 /**
  *
- * @author adminsd
+ * @author adminsdd
  */
 public class Analyst extends Staff{
 
