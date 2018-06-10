@@ -222,7 +222,7 @@ public class ITManager  implements Management
     
     /**Returns a String representation of the staff in the project team
      * (including those on holiday), or the message "No staff hired"
-     * @return a String representation of the staff in the project team
+     * @return a String reprjesentation of the staff in the project team
      **/
     public String getTeam() {
 
