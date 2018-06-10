@@ -4,7 +4,7 @@ import java.io.*;
  * Enumeration class StaffState - write a description of the enum class here
  * 
  * @author (your name here)
- * @version (version number or date here)
+ * @version (version number or date here)d
  */
 public enum StaffState implements Serializable
 {
