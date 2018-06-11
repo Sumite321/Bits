@@ -82,16 +82,37 @@ public class ITManager  implements Management
      * @param num is the reference number of the job
      * @returns true if the reference number represents a job
      **/
-     public boolean isJob(int num){
-        return false;
+    public boolean isJob(int num) {
+
+        boolean found = false;
+
+        for (Job j : allJobs.values()) {
+            if (j.getUNumber() == num) {
+                found = true;
+            }
+        }
+        return found;
     }
 
     
     /** Returns a String representation of all jobs 
      * @return returns a String representation of all jobs
      **/
-    public String getAllJobs(){
-        return "";
+    public String getAllJobs() {
+
+        StringBuilder jobDetails = new StringBuilder();
+
+        for (Job j : allJobs.values()) {
+            {
+                jobDetails.append("Job number: " + j.getUNumber() + " "
+                        + "Job type: " + j.getType() + " "
+                        + "Job difficulty: " + j.getLevel() + " "
+                        + "Penalty: " + j.getPenalty() + " "
+                        + "Hours to complete: " + j.getHours()
+                );
+            }
+        }
+        return jobDetails.toString();
     }
         
     
@@ -299,6 +320,8 @@ public class ITManager  implements Management
         // add all from the specs
         
         System.out.println("Now adding objects to the collections...");
+        
+        allJobs.put("1",new Job(100,JobType.DESIGN,10,3,200));
 
     }
 }
