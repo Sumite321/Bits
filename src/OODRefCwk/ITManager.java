@@ -7,7 +7,7 @@ import java.io.*;
  * as required for 6COM1037 Referred/Deferred cwk - June 2018 and 
  * specified in the Management interface
  * 
- * @author - put your name here
+ * @author - Liban
  * @version 
  */
 public class ITManager  implements Management 
