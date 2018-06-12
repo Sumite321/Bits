@@ -32,26 +32,6 @@ public class ITManager  implements Management
         setupTasks();
         setupStaff();
         
-         Job job1 = new Job(100,JobType.DESIGN,10,200,3);      //job No 100, Hours 10, penelty 200, Experience
-        Job job2 = new Job(101,JobType.HARDWARE,20,250,3);
-        Job job3 = new Job(102,JobType.SOFTWARE,30,100,3);
-        Job job4 = new Job(103,JobType.DESIGN,25,250,9);
-        Job job5 = new Job(104,JobType.SOFTWARE,15,350,7);
-        Job job6 = new Job(105,JobType.HARDWARE,35,300,8);
-        Job job7 = new Job(106,JobType.HARDWARE,20,400,5);
-        
-        allJobs.put(job1.getUNumber(),job1);
-        allJobs.put(job2.getUNumber(),job2);
-        allJobs.put(job3.getUNumber(),job3);
-        allJobs.put(job4.getUNumber(),job4);
-        allJobs.put(job5.getUNumber(),job5);
-        allJobs.put(job6.getUNumber(),job6);
-        allJobs.put(job7.getUNumber(),job7);
-        
-        
-        
-        
-        
      }
     
     
@@ -343,6 +323,22 @@ public class ITManager  implements Management
         System.out.println("Now adding objects to the collections...");
         
         allJobs.put(1,new Job(100,JobType.DESIGN,10,3,200));
+        
+        Job job1 = new Job(100,JobType.DESIGN,10,200,3);      //job No 100, Hours 10, penelty 200, Experience
+        Job job2 = new Job(101,JobType.HARDWARE,20,250,3);
+        Job job3 = new Job(102,JobType.SOFTWARE,30,100,3);
+        Job job4 = new Job(103,JobType.DESIGN,25,250,9);
+        Job job5 = new Job(104,JobType.SOFTWARE,15,350,7);
+        Job job6 = new Job(105,JobType.HARDWARE,35,300,8);
+        Job job7 = new Job(106,JobType.HARDWARE,20,400,5);
+        
+        allJobs.put(job1.getUNumber(),job1);
+        allJobs.put(job2.getUNumber(),job2);
+        allJobs.put(job3.getUNumber(),job3);
+        allJobs.put(job4.getUNumber(),job4);
+        allJobs.put(job5.getUNumber(),job5);
+        allJobs.put(job6.getUNumber(),job6);
+        allJobs.put(job7.getUNumber(),job7);
 
     }
 }
