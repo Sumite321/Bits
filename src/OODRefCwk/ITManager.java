@@ -109,7 +109,7 @@ public class ITManager  implements Management
                         + "Job type: " + j.getType() + " "
                         + "Job difficulty: " + j.getLevel() + " "
                         + "Penalty: " + j.getPenalty() + " "
-                        + "Hours to complete: " + j.getHours()
+                        + "Hours to complete: " + j.getHours() + "\n"
                 );
             }
         }
