@@ -17,4 +17,15 @@ public class Technician extends Staff{
         super(UName, experience, retainer, rate);
         this.isCiscoo = isC;
     }  
+
+    public boolean isIsCiscoo() {
+        return isCiscoo;
+    }
+
+    public void setIsCiscoo(boolean isCiscoo) {
+        this.isCiscoo = isCiscoo;
+    }
+    
+    
+    
 }

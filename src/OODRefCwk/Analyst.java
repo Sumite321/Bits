@@ -17,4 +17,13 @@ public class Analyst extends Staff{
         super(UName, experience, retainer, rate);
         this.canProgram = program;
     }
+
+    public boolean isCanProgram() {
+        return canProgram;
+    }
+
+    public void setCanProgram(boolean canProgram) {
+        this.canProgram = canProgram;
+    }
+    
 }

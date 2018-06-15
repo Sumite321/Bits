@@ -37,7 +37,7 @@
                 <formatter type="xml" />
                 <formatter type = "plain" usefile="false"/>
                 <batchtest fork="yes" todir="${test.xml}">
-                    <fileset dir="${test.src.dir}" includes="**/*Test.java" />
+                    <fileset dir="${test.src.dir}" includes="**/*.java" />
                 </batchtest>
             </junit>
             

@@ -135,9 +135,14 @@ public class ITManager  implements Management
                 staffDetails.append("Staff name: " + s.getUName() + " " + 
                         "Experience level: " + s.getExperience() + " " +
                         "Retainer: " + s.getRetainer() + " " + 
-                        "Hourly rate " + s.getRate());
+                        "Hourly rate " + s.getRate()+ " " + 
+                        "State:" + s.getState());
+                if (s instanceof Analyst ){staffDetails.append(" " + ((Analyst) s).isCanProgram() + " " + "Analyst");}
+                if (s instanceof Technician ){staffDetails.append(" " + ((Technician) s).isIsCiscoo() + " " + "Technician");}
+                if (s instanceof Programmer ){staffDetails.append( " " + "Programmer");}
+
             } else {
-                staffDetails.append("No staff found");
+                staffDetails.append("No such staff");
             }
         }
 
@@ -305,7 +310,7 @@ public class ITManager  implements Management
         staffToHire.put("Ela", new Programmer("Ela", 7, 200, 20));
         staffToHire.put("Fela", new Analyst("Fela", 6, 300, 90, false));
         staffToHire.put("Gita", new Programmer("Gita", 2, 200, 20));
-        staffToHire.put("Heia", new Technician("Heia", 8, 450, 40, false));
+        staffToHire.put("Hela", new Technician("Hela", 8, 450, 40, false));
         staffToHire.put("Ian", new Analyst("Ian", 4, 300, 60, false));
         System.out.println("Setting all staff available");
 
