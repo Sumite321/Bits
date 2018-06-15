@@ -219,6 +219,8 @@ public class ITManager  implements Management
                 toHire.setState(StaffState.WORKING);
                 teamMembers.put(toHire.getUName(), toHire);
                 message = toHire.getUName() + "has been hired for " + toHire.getRetainer() + "\n" + "Current account balance: " + getAccount();
+                staffToHire.remove(toHire.getUName());
+                //staffToHire.r
             }else{
             message = "Not enough money";
             }
