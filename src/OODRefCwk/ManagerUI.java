@@ -61,7 +61,7 @@ public class ManagerUI
                 {   
                     System.out.println("Enter number of the job");
                     String jobn = (myIn.nextLine()).trim();
-                    man1.doJob(Integer.valueOf(jobn));
+                    System.out.println(man1.doJob(Integer.valueOf(jobn)));
                 }              
                 else if (choice == 7)
                 {

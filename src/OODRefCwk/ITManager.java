@@ -14,10 +14,11 @@ public class ITManager  implements Management
 {
 // Declare fields
     private String ManagerName;
-    private int budget;
+    private double budget;
     private HashMap<Integer,Job> allJobs = new HashMap<>();// one collection for all jobs
     private HashMap<String,Staff> staffToHire = new HashMap<>();// one collection for all hirable staff
     private HashMap<String,Staff> teamMembers = new HashMap<>();// one collection for all team members
+    private HashMap<Integer,Double> bestChoice = new HashMap<>();// one collection for all jobs
 
 //**************** BITS ************************** 
     /** Constructor requires the name of the trainee manager and initial budget. Staff
@@ -115,7 +116,26 @@ public class ITManager  implements Management
         }
         return jobDetails.toString();
     }
-        
+       
+    public Job getJobReference(int jobNo) {
+
+        Job found = null;
+
+        if (isJob(jobNo)) {
+
+            for (Job job : allJobs.values()) {
+
+                if (job.getUNumber() == jobNo) {
+
+                    found = job;
+                }
+            }
+
+        }
+
+        return found;
+
+    }
     
     
 //*********************** All Staff *************************    
@@ -287,10 +307,113 @@ public class ITManager  implements Management
      * @param jbNo is the reference number of the job
      * @return a String showing the result of doing the job(as above)
      */
-    public String doJob(int jbNo){
-        return "";
+    public String doJob(int jbNo) {
+
+        Double toDeduct = 0.0;
+        String message = "";
+        Staff toRemove = null;
+        // go through the membersOfTeam 
+        // get their especialisation
+        // check if it complies with the job type
+        //display message
+        // update account
+        bestChoice.clear();
+        if (isJob(jbNo)) {
+            Job jobRef = getJobReference(jbNo);
+            JobType type = jobRef.getType(); // Get the job reference, EX: Software
+            for (Staff staff : teamMembers.values()) { // Go through the collection
+                if(staff.getState() != StaffState.ONHOLIDAY){
+                if (type == JobType.SOFTWARE || type == JobType.DESIGN) { // if the type is Software, Programmer can do it and Analyst can do it if True.
+
+                    if (staff instanceof Programmer) { // if a programmer exists
+                        if (jobRef.getLevel() >= staff.getExperience()) {
+                            message = "not completed due to staff inexperience";
+                            toDeduct = jobRef.getPenalty() * -1.0;
+                            bestChoice.put(2,toDeduct);
+                        } else {
+                            message = "Job completed by" + staff.getUName(); // job completed
+                            toDeduct = staff.getRate() * jobRef.getHours();
+                            bestChoice.put(1,toDeduct);
+                            //teamMembers.remove(staff.getUName());
+                        }
+                    }
+                    if (staff instanceof Analyst) { // if a Analyst exists
+                        
+                         if (jobRef.getLevel() >= staff.getExperience()) {
+                            message = "not completed due to staff inexperience";
+                            toDeduct = jobRef.getPenalty() * -1.0;
+                            bestChoice.put(2,toDeduct);
+                        }else{
+                        
+                        if (((Analyst) staff).isCanProgram() && type == JobType.SOFTWARE) { // if the Analyst can program
+                            message = "Job completed by" + staff.getUName(); // job done if software + can program
+                            toDeduct = staff.getRate() * jobRef.getHours();
+                            bestChoice.put(1,toDeduct);
+                            //teamMembers.remove(staff.getUName());
+                        } else {
+                            message = "Job completed by" + staff.getUName(); // job done for design
+                            toDeduct = staff.getRate() * jobRef.getHours();
+                            bestChoice.put(1,toDeduct);
+                        }
+                    }
+                    }
+                    if (staff instanceof Technician) {
+                        message = "No staff available";
+                        toDeduct = jobRef.getPenalty() * -1.0 ;
+                        bestChoice.put(3,toDeduct);
+                    }
+
+                } else if (type == JobType.HARDWARE && staff instanceof Technician) {
+                     if (jobRef.getLevel() >= staff.getExperience()) {
+                            message = "not completed due to staff inexperience";
+                            toDeduct = jobRef.getPenalty() * -1.0;
+                            bestChoice.put(2,toDeduct);
+                    }else{
+                    message = "Job completed by" + staff.getUName();
+                    toDeduct += staff.getRate() * jobRef.getHours();
+                    bestChoice.put(1,toDeduct);
+                    toRemove = staff;
+                     }
+                } else {
+                    message = "No staff available";
+                    toDeduct = jobRef.getPenalty() * -1.0;
+                    bestChoice.put(3,toDeduct);
+                }
+            }else{
+                 message = "No staff available";
+                    toDeduct = jobRef.getPenalty() * -1.0;
+                    bestChoice.put(3,toDeduct);
+                
+                }
+            }
+
+        } else {
+            message = "No such Job";
+        }
+        
+        
+        if(teamMembers.size() > 1){
+            if(bestChoice.containsKey(1)){
+            budget = budget + bestChoice.get(1);
+            teamMembers.remove(toRemove.getUName());
+            toRemove.setState(StaffState.ONHOLIDAY);
+            message = "Job Completed by" + toRemove.getUName();
+            } else if(bestChoice.containsKey(2) ){
+            budget = budget + bestChoice.get(2);
+            message = "not completed due to staff inexperience";
+            }else if(bestChoice.containsKey(3)){
+            budget = budget + bestChoice.get(3);
+            message = "not completed due to staff inexperience";
+            }
+
+        }else{
+        budget = budget + toDeduct;}
+        System.out.println(budget);
+        System.out.println(bestChoice.toString());
+        return message;
     }
 
+  
     /**Staff rejoin the team after holiday by setting state to "working" 
      * @param the name of the staff rejoining the team after holiday
      */
@@ -329,17 +452,16 @@ public class ITManager  implements Management
         
         System.out.println("Now adding objects to the collections...");
         
-        allJobs.put(1,new Job(100,JobType.DESIGN,10,3,200));
+        allJobs.put(0,new Job(100,JobType.DESIGN,10,3,200));
+               
+        Job job2 = new Job(101,JobType.HARDWARE,20,3,150);
+        Job job3 = new Job(102,JobType.SOFTWARE,30,3,100);
+        Job job4 = new Job(103,JobType.DESIGN,25,9,250);
+        Job job5 = new Job(104,JobType.SOFTWARE,15,7,350);
+        Job job6 = new Job(105,JobType.HARDWARE,35,8,300);
+        Job job7 = new Job(106,JobType.HARDWARE,20,5,400);
         
-        Job job1 = new Job(100,JobType.DESIGN,10,200,3);      //job No 100, Hours 10, penelty 200, Experience
-        Job job2 = new Job(101,JobType.HARDWARE,20,250,3);
-        Job job3 = new Job(102,JobType.SOFTWARE,30,100,3);
-        Job job4 = new Job(103,JobType.DESIGN,25,250,9);
-        Job job5 = new Job(104,JobType.SOFTWARE,15,350,7);
-        Job job6 = new Job(105,JobType.HARDWARE,35,300,8);
-        Job job7 = new Job(106,JobType.HARDWARE,20,400,5);
-        
-        allJobs.put(job1.getUNumber(),job1);
+        //allJobs.put(job1.getUNumber(),job1);
         allJobs.put(job2.getUNumber(),job2);
         allJobs.put(job3.getUNumber(),job3);
         allJobs.put(job4.getUNumber(),job4);
