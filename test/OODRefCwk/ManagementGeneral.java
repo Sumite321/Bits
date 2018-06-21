@@ -128,7 +128,6 @@ public class ManagementGeneral {
         String mem = pr.getStaffMember("Alan");
         boolean result = containsText(mem,new ArrayList<>(Arrays.asList(
                         "Alan","Analyst","2", "300","30","Available", "false" )));
-        System.out.println(mem);
         assertTrue(result); 
     }
 
@@ -137,8 +136,6 @@ public class ManagementGeneral {
         String str = pr.getStaffMember("Ian");
         boolean result = containsText(str,new ArrayList<>(Arrays.asList(
                         "Ian","Analyst","4", "300","60","Available", "true" )));
-                System.out.println(str);
-
         assertTrue(result); 
     }
 
@@ -147,8 +144,6 @@ public class ManagementGeneral {
         String str = pr.getStaffMember("Bob");
         boolean result = containsText(str,new ArrayList<>(Arrays.asList(
                         "Bob","Technician","2", "100","30","Available", "false" )));
-                        System.out.println(str);
-
         assertTrue(result); 
     }
 

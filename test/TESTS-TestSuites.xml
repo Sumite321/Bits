@@ -255,7 +255,7 @@
       <system-err><![CDATA[]]></system-err>
 
   </testsuite>
-  <testsuite errors="0" failures="0" hostname="Sumites-MacBook-Pro.local" id="1" name="ManagementGeneral" package="OODRefCwk" skipped="0" tests="15" time="0.145" timestamp="2018-06-16T00:13:43">
+  <testsuite errors="0" failures="0" hostname="Sumites-MacBook-Pro.local" id="1" name="ManagementGeneral" package="OODRefCwk" skipped="0" tests="15" time="0.35" timestamp="2018-06-21T16:06:26">
       <properties>
           <property name="addExports:java.desktop/sun.awt.im" value="ALL-UNNAMED" />
 
@@ -296,8 +296,6 @@
           <property name="user.name" value="admin" />
 
           <property name="nb.show.statistics.ui" value="usageStatisticsEnabled" />
-
-          <property name="svnkit.http.methods" value="Basic" />
 
           <property name="user.language" value="en" />
 
@@ -433,7 +431,7 @@
 
           <property name="java.class.path" value="/Users/admin/Downloads/oodcwk-studentsnb/lib/junit-4.12.jar:/Users/admin/Downloads/oodcwk-studentsnb/lib/hamcrest-core-1.3.jar:/Users/admin/Downloads/oodcwk-studentsnb/build/classes:/Users/admin/Downloads/oodcwk-studentsnb/build/test:/Applications/NetBeans/NetBeans 8.2.app/Contents/Resources/NetBeans/extide/ant/lib/ant-launcher.jar:/Applications/NetBeans/NetBeans 8.2.app/Contents/Resources/NetBeans/extide/ant/lib/ant.jar:/Applications/NetBeans/NetBeans 8.2.app/Contents/Resources/NetBeans/extide/ant/lib/ant-junit.jar:/Applications/NetBeans/NetBeans 8.2.app/Contents/Resources/NetBeans/extide/ant/lib/ant-junit4.jar" />
 
-          <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner OODRefCwk.ManagementGeneral skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=true formatter=org.apache.tools.ant.taskdefs.optional.junit.SummaryJUnitResultFormatter showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/Users/admin/Downloads/oodcwk-studentsnb/build/test/results/TEST-OODRefCwk.ManagementGeneral.xml formatter=org.apache.tools.ant.taskdefs.optional.junit.PlainJUnitResultFormatter crashfile=/Users/admin/Downloads/oodcwk-studentsnb/junitvmwatcher828131150402308246.properties propsfile=/Users/admin/Downloads/oodcwk-studentsnb/junit7707336583629510501.properties" />
+          <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner OODRefCwk.ManagementGeneral skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=true formatter=org.apache.tools.ant.taskdefs.optional.junit.SummaryJUnitResultFormatter showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/Users/admin/Downloads/oodcwk-studentsnb/build/test/results/TEST-OODRefCwk.ManagementGeneral.xml formatter=org.apache.tools.ant.taskdefs.optional.junit.PlainJUnitResultFormatter crashfile=/Users/admin/Downloads/oodcwk-studentsnb/junitvmwatcher4160720208030278721.properties propsfile=/Users/admin/Downloads/oodcwk-studentsnb/junit159416742785429082.properties" />
 
           <property name="sun.java2d.noddraw" value="true" />
 
@@ -481,6 +479,8 @@
 
           <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM" />
 
+          <property name="nu.validator.checker.imageCandidateString.hasWidth" value="0" />
+
           <property name="basedir" value="/Users/admin/Downloads/oodcwk-studentsnb" />
 
           <property name="ant.java.version" value="1.8" />
@@ -501,35 +501,35 @@
 
       </properties>
 
-      <testcase classname="OODRefCwk.ManagementGeneral" name="checkDetailsOfNonExistantJohn" time="0.01" />
+      <testcase classname="OODRefCwk.ManagementGeneral" name="checkDetailsOfNonExistantJohn" time="0.014" />
 
       <testcase classname="OODRefCwk.ManagementGeneral" name="isNotOverdrawnAtStart" time="0.001" />
 
       <testcase classname="OODRefCwk.ManagementGeneral" name="checkDetailsOfBob" time="0.002" />
 
-      <testcase classname="OODRefCwk.ManagementGeneral" name="checkDetailsOfEla" time="0.0" />
+      <testcase classname="OODRefCwk.ManagementGeneral" name="checkDetailsOfEla" time="0.001" />
 
-      <testcase classname="OODRefCwk.ManagementGeneral" name="checkDetailsOfIan" time="0.001" />
+      <testcase classname="OODRefCwk.ManagementGeneral" name="checkDetailsOfIan" time="0.0" />
 
-      <testcase classname="OODRefCwk.ManagementGeneral" name="checkAccountAtStart" time="0.0" />
+      <testcase classname="OODRefCwk.ManagementGeneral" name="checkAccountAtStart" time="0.001" />
 
-      <testcase classname="OODRefCwk.ManagementGeneral" name="checkAvailableStaffAtStart" time="0.002" />
+      <testcase classname="OODRefCwk.ManagementGeneral" name="checkAvailableStaffAtStart" time="0.001" />
 
-      <testcase classname="OODRefCwk.ManagementGeneral" name="isNotInJobRange" time="0.002" />
+      <testcase classname="OODRefCwk.ManagementGeneral" name="isNotInJobRange" time="0.001" />
 
-      <testcase classname="OODRefCwk.ManagementGeneral" name="isInJobRange" time="0.0" />
+      <testcase classname="OODRefCwk.ManagementGeneral" name="isInJobRange" time="0.001" />
 
-      <testcase classname="OODRefCwk.ManagementGeneral" name="checkTeamAtStart" time="0.001" />
+      <testcase classname="OODRefCwk.ManagementGeneral" name="checkTeamAtStart" time="0.0" />
 
-      <testcase classname="OODRefCwk.ManagementGeneral" name="Job106InAllJobs" time="0.001" />
+      <testcase classname="OODRefCwk.ManagementGeneral" name="Job106InAllJobs" time="0.0" />
 
       <testcase classname="OODRefCwk.ManagementGeneral" name="checkDetailsOfAlan" time="0.001" />
 
-      <testcase classname="OODRefCwk.ManagementGeneral" name="checkDetailsOfCeri" time="0.002" />
+      <testcase classname="OODRefCwk.ManagementGeneral" name="checkDetailsOfCeri" time="0.0" />
 
       <testcase classname="OODRefCwk.ManagementGeneral" name="Job104InAllJobs" time="0.0" />
 
-      <testcase classname="OODRefCwk.ManagementGeneral" name="Job100InAllJobs" time="0.002" />
+      <testcase classname="OODRefCwk.ManagementGeneral" name="Job100InAllJobs" time="0.0" />
 
       <system-out><![CDATA[Now adding objects to the collections...
 Now adding objects to the collections...
@@ -540,14 +540,6 @@ Setting all staff available
 Now adding objects to the collections...
 Now adding objects to the collections...
 Setting all staff available
-Staff name: Dan Experience level: 2 Retainer: 300 Hourly rate 20.0 State: Available ProgrammerStaff name: Hela Experience level: 8 Retainer: 450 Hourly rate 40.0 State: Available false TechnicianStaff name: Bob Experience level: 2 Retainer: 100 Hourly rate 30.0 State: Available false TechnicianStaff name: Fela Experience level: 6 Retainer: 300 Hourly rate 90.0 State: Available false AnalystStaff name: Ceri Experience level: 4 Retainer: 250 Hourly rate 40.0 State: Available true TechnicianStaff name: Alan Experience level: 2 Retainer: 300 Hourly rate 30.0 State: Available false AnalystStaff name: Ian Experience level: 4 Retainer: 300 Hourly rate 60.0 State: Available false AnalystStaff name: Ela Experience level: 7 Retainer: 200 Hourly rate 20.0 State: Available ProgrammerStaff name: Gita Experience level: 2 Retainer: 200 Hourly rate 20.0 State: Available Programmer
-Now adding objects to the collections...
-Now adding objects to the collections...
-Setting all staff available
-Now adding objects to the collections...
-Now adding objects to the collections...
-Setting all staff available
-Staff name: Dan Experience level: 2 Retainer: 300 Hourly rate 20.0 State: Available ProgrammerStaff name: Hela Experience level: 8 Retainer: 450 Hourly rate 40.0 State: Available false TechnicianStaff name: Bob Experience level: 2 Retainer: 100 Hourly rate 30.0 State: Available false TechnicianStaff name: Fela Experience level: 6 Retainer: 300 Hourly rate 90.0 State: Available false AnalystStaff name: Ceri Experience level: 4 Retainer: 250 Hourly rate 40.0 State: Available true TechnicianStaff name: Alan Experience level: 2 Retainer: 300 Hourly rate 30.0 State: Available false AnalystStaff name: Ian Experience level: 4 Retainer: 300 Hourly rate 60.0 State: Available false AnalystStaff name: Ela Experience level: 7 Retainer: 200 Hourly rate 20.0 State: Available ProgrammerStaff name: Gita Experience level: 2 Retainer: 200 Hourly rate 20.0 State: Available Programmer
 Now adding objects to the collections...
 Now adding objects to the collections...
 Setting all staff available
@@ -569,7 +561,12 @@ Setting all staff available
 Now adding objects to the collections...
 Now adding objects to the collections...
 Setting all staff available
-Staff name: Dan Experience level: 2 Retainer: 300 Hourly rate 20.0 State: Available ProgrammerStaff name: Hela Experience level: 8 Retainer: 450 Hourly rate 40.0 State: Available false TechnicianStaff name: Bob Experience level: 2 Retainer: 100 Hourly rate 30.0 State: Available false TechnicianStaff name: Fela Experience level: 6 Retainer: 300 Hourly rate 90.0 State: Available false AnalystStaff name: Ceri Experience level: 4 Retainer: 250 Hourly rate 40.0 State: Available true TechnicianStaff name: Alan Experience level: 2 Retainer: 300 Hourly rate 30.0 State: Available false AnalystStaff name: Ian Experience level: 4 Retainer: 300 Hourly rate 60.0 State: Available false AnalystStaff name: Ela Experience level: 7 Retainer: 200 Hourly rate 20.0 State: Available ProgrammerStaff name: Gita Experience level: 2 Retainer: 200 Hourly rate 20.0 State: Available Programmer
+Now adding objects to the collections...
+Now adding objects to the collections...
+Setting all staff available
+Now adding objects to the collections...
+Now adding objects to the collections...
+Setting all staff available
 Now adding objects to the collections...
 Now adding objects to the collections...
 Setting all staff available
@@ -584,7 +581,7 @@ Setting all staff available
       <system-err><![CDATA[]]></system-err>
 
   </testsuite>
-  <testsuite errors="0" failures="0" hostname="Sumites-MacBook-Pro.local" id="2" name="ManagementHiring" package="OODRefCwk" skipped="0" tests="5" time="0.122" timestamp="2018-06-16T00:13:44">
+  <testsuite errors="0" failures="0" hostname="Sumites-MacBook-Pro.local" id="2" name="ManagementHiring" package="OODRefCwk" skipped="0" tests="5" time="0.093" timestamp="2018-06-21T16:06:26">
       <properties>
           <property name="addExports:java.desktop/sun.awt.im" value="ALL-UNNAMED" />
 
@@ -625,8 +622,6 @@ Setting all staff available
           <property name="user.name" value="admin" />
 
           <property name="nb.show.statistics.ui" value="usageStatisticsEnabled" />
-
-          <property name="svnkit.http.methods" value="Basic" />
 
           <property name="user.language" value="en" />
 
@@ -762,7 +757,7 @@ Setting all staff available
 
           <property name="java.class.path" value="/Users/admin/Downloads/oodcwk-studentsnb/lib/junit-4.12.jar:/Users/admin/Downloads/oodcwk-studentsnb/lib/hamcrest-core-1.3.jar:/Users/admin/Downloads/oodcwk-studentsnb/build/classes:/Users/admin/Downloads/oodcwk-studentsnb/build/test:/Applications/NetBeans/NetBeans 8.2.app/Contents/Resources/NetBeans/extide/ant/lib/ant-launcher.jar:/Applications/NetBeans/NetBeans 8.2.app/Contents/Resources/NetBeans/extide/ant/lib/ant.jar:/Applications/NetBeans/NetBeans 8.2.app/Contents/Resources/NetBeans/extide/ant/lib/ant-junit.jar:/Applications/NetBeans/NetBeans 8.2.app/Contents/Resources/NetBeans/extide/ant/lib/ant-junit4.jar" />
 
-          <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner OODRefCwk.ManagementHiring skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=true formatter=org.apache.tools.ant.taskdefs.optional.junit.SummaryJUnitResultFormatter showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/Users/admin/Downloads/oodcwk-studentsnb/build/test/results/TEST-OODRefCwk.ManagementHiring.xml formatter=org.apache.tools.ant.taskdefs.optional.junit.PlainJUnitResultFormatter crashfile=/Users/admin/Downloads/oodcwk-studentsnb/junitvmwatcher7835814718496351773.properties propsfile=/Users/admin/Downloads/oodcwk-studentsnb/junit8087244811921273955.properties" />
+          <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner OODRefCwk.ManagementHiring skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=true formatter=org.apache.tools.ant.taskdefs.optional.junit.SummaryJUnitResultFormatter showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/Users/admin/Downloads/oodcwk-studentsnb/build/test/results/TEST-OODRefCwk.ManagementHiring.xml formatter=org.apache.tools.ant.taskdefs.optional.junit.PlainJUnitResultFormatter crashfile=/Users/admin/Downloads/oodcwk-studentsnb/junitvmwatcher5520413523390262142.properties propsfile=/Users/admin/Downloads/oodcwk-studentsnb/junit6053641090027554010.properties" />
 
           <property name="sun.java2d.noddraw" value="true" />
 
@@ -810,6 +805,8 @@ Setting all staff available
 
           <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM" />
 
+          <property name="nu.validator.checker.imageCandidateString.hasWidth" value="0" />
+
           <property name="basedir" value="/Users/admin/Downloads/oodcwk-studentsnb" />
 
           <property name="ant.java.version" value="1.8" />
@@ -830,7 +827,7 @@ Setting all staff available
 
       </properties>
 
-      <testcase classname="OODRefCwk.ManagementHiring" name="notEnoughMoney" time="0.015" />
+      <testcase classname="OODRefCwk.ManagementHiring" name="notEnoughMoney" time="0.012" />
 
       <testcase classname="OODRefCwk.ManagementHiring" name="hireStaff" time="0.001" />
 
@@ -849,15 +846,6 @@ Setting all staff available
 Now adding objects to the collections...
 Now adding objects to the collections...
 Setting all staff available
-********** THIS ONE HERE
-Staff name: Dan Experience level: 2 Retainer: 300 Hourly rate 20.0 State:  Available
-Staff name: Hela Experience level: 8 Retainer: 450 Hourly rate 40.0 State:  Available
-Staff name: Fela Experience level: 6 Retainer: 300 Hourly rate 90.0 State:  Available
-Staff name: Ceri Experience level: 4 Retainer: 250 Hourly rate 40.0 State:  Available
-Staff name: Ian Experience level: 4 Retainer: 300 Hourly rate 60.0 State:  Available
-Staff name: Ela Experience level: 7 Retainer: 200 Hourly rate 20.0 State:  Available
-Staff name: Gita Experience level: 2 Retainer: 200 Hourly rate 20.0 State:  Available
-
 Now adding objects to the collections...
 Now adding objects to the collections...
 Setting all staff available
@@ -869,7 +857,7 @@ Setting all staff available
       <system-err><![CDATA[]]></system-err>
 
   </testsuite>
-  <testsuite errors="0" failures="0" hostname="Sumites-MacBook-Pro.local" id="3" name="ManagementJobsDoing" package="OODRefCwk" skipped="0" tests="16" time="0.122" timestamp="2018-06-16T00:13:45">
+  <testsuite errors="0" failures="0" hostname="Sumites-MacBook-Pro.local" id="3" name="ManagementJobsDoing" package="OODRefCwk" skipped="0" tests="16" time="0.164" timestamp="2018-06-21T16:06:27">
       <properties>
           <property name="addExports:java.desktop/sun.awt.im" value="ALL-UNNAMED" />
 
@@ -910,8 +898,6 @@ Setting all staff available
           <property name="user.name" value="admin" />
 
           <property name="nb.show.statistics.ui" value="usageStatisticsEnabled" />
-
-          <property name="svnkit.http.methods" value="Basic" />
 
           <property name="user.language" value="en" />
 
@@ -1047,7 +1033,7 @@ Setting all staff available
 
           <property name="java.class.path" value="/Users/admin/Downloads/oodcwk-studentsnb/lib/junit-4.12.jar:/Users/admin/Downloads/oodcwk-studentsnb/lib/hamcrest-core-1.3.jar:/Users/admin/Downloads/oodcwk-studentsnb/build/classes:/Users/admin/Downloads/oodcwk-studentsnb/build/test:/Applications/NetBeans/NetBeans 8.2.app/Contents/Resources/NetBeans/extide/ant/lib/ant-launcher.jar:/Applications/NetBeans/NetBeans 8.2.app/Contents/Resources/NetBeans/extide/ant/lib/ant.jar:/Applications/NetBeans/NetBeans 8.2.app/Contents/Resources/NetBeans/extide/ant/lib/ant-junit.jar:/Applications/NetBeans/NetBeans 8.2.app/Contents/Resources/NetBeans/extide/ant/lib/ant-junit4.jar" />
 
-          <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner OODRefCwk.ManagementJobsDoing skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=true formatter=org.apache.tools.ant.taskdefs.optional.junit.SummaryJUnitResultFormatter showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/Users/admin/Downloads/oodcwk-studentsnb/build/test/results/TEST-OODRefCwk.ManagementJobsDoing.xml formatter=org.apache.tools.ant.taskdefs.optional.junit.PlainJUnitResultFormatter crashfile=/Users/admin/Downloads/oodcwk-studentsnb/junitvmwatcher2841422445252129612.properties propsfile=/Users/admin/Downloads/oodcwk-studentsnb/junit4237450109372865188.properties" />
+          <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner OODRefCwk.ManagementJobsDoing skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=true formatter=org.apache.tools.ant.taskdefs.optional.junit.SummaryJUnitResultFormatter showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/Users/admin/Downloads/oodcwk-studentsnb/build/test/results/TEST-OODRefCwk.ManagementJobsDoing.xml formatter=org.apache.tools.ant.taskdefs.optional.junit.PlainJUnitResultFormatter crashfile=/Users/admin/Downloads/oodcwk-studentsnb/junitvmwatcher7807816558586935841.properties propsfile=/Users/admin/Downloads/oodcwk-studentsnb/junit3889279804698858040.properties" />
 
           <property name="sun.java2d.noddraw" value="true" />
 
@@ -1095,6 +1081,8 @@ Setting all staff available
 
           <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM" />
 
+          <property name="nu.validator.checker.imageCandidateString.hasWidth" value="0" />
+
           <property name="basedir" value="/Users/admin/Downloads/oodcwk-studentsnb" />
 
           <property name="ant.java.version" value="1.8" />
@@ -1115,52 +1103,47 @@ Setting all staff available
 
       </properties>
 
-      <testcase classname="OODRefCwk.ManagementJobsDoing" name="doingJobsInTeam1" time="0.012" />
+      <testcase classname="OODRefCwk.ManagementJobsDoing" name="doingJobsInTeam1" time="0.015" />
 
-      <testcase classname="OODRefCwk.ManagementJobsDoing" name="doingJobsInTeam2" time="0.002" />
+      <testcase classname="OODRefCwk.ManagementJobsDoing" name="doingJobsInTeam2" time="0.001" />
 
       <testcase classname="OODRefCwk.ManagementJobsDoing" name="programmerDoingDesignNoExperience" time="0.001" />
 
       <testcase classname="OODRefCwk.ManagementJobsDoing" name="analystDoingDesignWithProgWithExp" time="0.0" />
 
-      <testcase classname="OODRefCwk.ManagementJobsDoing" name="programmerDoingHardware" time="0.0" />
+      <testcase classname="OODRefCwk.ManagementJobsDoing" name="programmerDoingHardware" time="0.002" />
 
-      <testcase classname="OODRefCwk.ManagementJobsDoing" name="technicianDoingHardwareNoExperience" time="0.0" />
+      <testcase classname="OODRefCwk.ManagementJobsDoing" name="technicianDoingHardwareNoExperience" time="0.001" />
 
-      <testcase classname="OODRefCwk.ManagementJobsDoing" name="analystDoingSoftwareWithProgNoExp" time="0.0" />
+      <testcase classname="OODRefCwk.ManagementJobsDoing" name="analystDoingSoftwareWithProgNoExp" time="0.001" />
 
       <testcase classname="OODRefCwk.ManagementJobsDoing" name="analystDoingSoftwareNoProg" time="0.0" />
 
-      <testcase classname="OODRefCwk.ManagementJobsDoing" name="technicianDoingSoftware" time="0.001" />
+      <testcase classname="OODRefCwk.ManagementJobsDoing" name="technicianDoingSoftware" time="0.0" />
 
-      <testcase classname="OODRefCwk.ManagementJobsDoing" name="analystDoingHardware" time="0.001" />
+      <testcase classname="OODRefCwk.ManagementJobsDoing" name="analystDoingHardware" time="0.0" />
 
-      <testcase classname="OODRefCwk.ManagementJobsDoing" name="technicianDoingDesign" time="0.002" />
+      <testcase classname="OODRefCwk.ManagementJobsDoing" name="technicianDoingDesign" time="0.001" />
 
-      <testcase classname="OODRefCwk.ManagementJobsDoing" name="technicianDoingHwareWithExperience" time="0.0" />
+      <testcase classname="OODRefCwk.ManagementJobsDoing" name="technicianDoingHwareWithExperience" time="0.001" />
 
-      <testcase classname="OODRefCwk.ManagementJobsDoing" name="programmerDoingSoftwareNoExperience" time="0.0" />
+      <testcase classname="OODRefCwk.ManagementJobsDoing" name="programmerDoingSoftwareNoExperience" time="0.001" />
 
-      <testcase classname="OODRefCwk.ManagementJobsDoing" name="programmerDoingSoftwareWithExp" time="0.001" />
+      <testcase classname="OODRefCwk.ManagementJobsDoing" name="programmerDoingSoftwareWithExp" time="0.003" />
 
-      <testcase classname="OODRefCwk.ManagementJobsDoing" name="analystDoingDesignWithProgNoExp" time="0.0" />
+      <testcase classname="OODRefCwk.ManagementJobsDoing" name="analystDoingDesignWithProgNoExp" time="0.001" />
 
-      <testcase classname="OODRefCwk.ManagementJobsDoing" name="programmerDoingDesignWithExp" time="0.002" />
+      <testcase classname="OODRefCwk.ManagementJobsDoing" name="programmerDoingDesignWithExp" time="0.005" />
 
       <system-out><![CDATA[Now adding objects to the collections...
 Now adding objects to the collections...
 Setting all staff available
-BIG PROBLEM ************
 850.0
 {1=800.0, 3=-150.0}
-Job Completed byHela
 650.0
 {2=-200.0}
-not completed due to staff inexperience
 300.0
 {2=-350.0}
-not completed due to staff inexperience
-BIG PROBLEM ************
 Now adding objects to the collections...
 Now adding objects to the collections...
 Setting all staff available
@@ -1168,12 +1151,8 @@ Setting all staff available
 {1=800.0, 3=-150.0}
 650.0
 {2=-200.0}
-Staff name: Alan Experience level: 2 Retainer: 300 Hourly rate: 30.0 State:  Working
-Staff name: Gita Experience level: 2 Retainer: 200 Hourly rate: 20.0 State:  Working
-
 500.0
 {3=-150.0}
-not completed due to staff inexperience
 Now adding objects to the collections...
 Now adding objects to the collections...
 Setting all staff available
@@ -1187,12 +1166,8 @@ Setting all staff available
 Now adding objects to the collections...
 Now adding objects to the collections...
 Setting all staff available
-REAL SECOND ONE ******************
 650.0
 {3=-150.0}
-no staff available
-REAL SECOND ONE ******************
-650.0
 Now adding objects to the collections...
 Now adding objects to the collections...
 Setting all staff available
@@ -1211,10 +1186,8 @@ Setting all staff available
 Now adding objects to the collections...
 Now adding objects to the collections...
 Setting all staff available
-REAL 9 **********************
 800.0
 {3=-100.0}
-no staff available800.0
 Now adding objects to the collections...
 Now adding objects to the collections...
 Setting all staff available
@@ -1228,11 +1201,8 @@ Setting all staff available
 Now adding objects to the collections...
 Now adding objects to the collections...
 Setting all staff available
-******************** the real one
 1550.0
 {1=800.0}
-job completed byceri
-******************** the real one
 Now adding objects to the collections...
 Now adding objects to the collections...
 Setting all staff available
@@ -1241,12 +1211,8 @@ Setting all staff available
 Now adding objects to the collections...
 Now adding objects to the collections...
 Setting all staff available
-******************** the real one2
-800.0
 1400.0
 {1=600.0}
-job completed byela1400.0
-******************** the real one2
 Now adding objects to the collections...
 Now adding objects to the collections...
 Setting all staff available

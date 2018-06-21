@@ -56,14 +56,12 @@ public class ManagementJobsDoing {
     @Test
     public void technicianDoingSoftware()
     {
-        System.out.println("REAL 9 **********************");
         //should not be eligible
         pr.hireStaff("Bob");
         String done = (pr.doJob(102)).toLowerCase();
         boolean result = containsText(done,new ArrayList<>(Arrays.asList(
                        "no","staff","available" )));
         int expected = 800;
-        System.out.println(done + pr.getAccount());
         assertTrue(expected == pr.getAccount() && result);      
     }
     
@@ -94,14 +92,11 @@ public class ManagementJobsDoing {
     @Test
     public void technicianDoingHwareWithExperience()
     {
-        System.out.println("******************** the real one");
         //should be eligible with experience - can do job
         pr.hireStaff("Ceri");
         String done = (pr.doJob(101)).toLowerCase();
         boolean result = containsText(done,new ArrayList<>(Arrays.asList(
                        "completed","ceri" )));
-        System.out.println(done);
-        System.out.println("******************** the real one");
 
         int expected = 1550;
         assertTrue(expected == pr.getAccount() && result);       
@@ -110,15 +105,11 @@ public class ManagementJobsDoing {
     @Test
     public void programmerDoingHardware()
     {
-        System.out.println("REAL SECOND ONE ******************");
         //should not be eligible
         pr.hireStaff("Gita");
         String done = (pr.doJob(101)).toLowerCase();
         boolean result = containsText(done,new ArrayList<>(Arrays.asList(
                        "no","staff","available" )));
-        System.out.println(done);
-        System.out.println("REAL SECOND ONE ******************");
-        System.out.println(pr.getAccount());
         int expected = 650;
         assertTrue(expected == pr.getAccount() && result);      
     }
@@ -138,17 +129,11 @@ public class ManagementJobsDoing {
     @Test
     public void programmerDoingSoftwareWithExp()
     {
-        System.out.println("******************** the real one2");
-
         //should be eligible with experience
         pr.hireStaff("Ela");
-        System.out.println(pr.getAccount());
         String done = (pr.doJob(102)).toLowerCase();
         boolean result = containsText(done, new ArrayList<>(Arrays.asList(
                        "completed ","ela" )));
-        System.out.println(done + pr.getAccount());
-        System.out.println("******************** the real one2");
-
         int expected = 1400;
         assertTrue(expected == pr.getAccount() && result);     
     }
@@ -251,17 +236,15 @@ public class ManagementJobsDoing {
     @Test
     public void doingJobsInTeam1()
     {
-        System.out.println("BIG PROBLEM ************");
         pr.hireStaff("Alan");
         pr.hireStaff("Gita");
         pr.hireStaff("Hela");
         //Do Jobs
-        System.out.println(pr.doJob(101)); // Account 850 done by Hela - on holiday
-        System.out.println(pr.doJob(100)); // Account 650 Alan chosen bit inexperienced
-        System.out.println(pr.doJob(104)); // Account 450 Gita chosen but inexperienced
+        pr.doJob(101); // Account 850 done by Hela - on holiday
+        pr.doJob(100); // Account 650 Alan chosen bit inexperienced
+        pr.doJob(104); // Account 450 Gita chosen but inexperienced
         int expected = 300;
         assertTrue(expected == pr.getAccount());
-        System.out.println("BIG PROBLEM ************");
     }
     
     @Test
@@ -273,8 +256,8 @@ public class ManagementJobsDoing {
         //Do Jobs
         pr.doJob(101); // Account 850 done by Hela - on holiday
         pr.doJob(100); // Account 650 Alan chosen bit inexperienced
-        System.out.println(pr.getTeam());
-        System.out.println(pr.doJob(101)); // Account 450 No one available
+        pr.getTeam();
+        pr.doJob(101); // Account 450 No one available
         int expected = 500;
         assertTrue(expected == pr.getAccount());
     }

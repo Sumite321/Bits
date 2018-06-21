@@ -64,8 +64,6 @@ Management pr;
         pr.hireStaff("Alan");
         pr.hireStaff("Bob");
         String actual = pr.getAvailableStaff();
-        System.out.println("********** THIS ONE HERE");
-        System.out.println(actual);
         result = !(actual.contains("Alan") || actual.contains("Bob"));
         assertTrue(result);
     }

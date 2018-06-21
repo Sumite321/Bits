@@ -408,8 +408,6 @@ public class ITManager  implements Management
 
         }else{
         budget = budget + toDeduct;}
-        System.out.println(budget);
-        System.out.println(bestChoice.toString());
         return message;
     }
 
@@ -427,7 +425,6 @@ public class ITManager  implements Management
         // add all from the specs
         //Staff alan = new Analyst("Alan",2,300,30,StaffState.AVAILABLE,false);
 
-        System.out.println("Now adding objects to the collections...");
         staffToHire.put("Alan", new Analyst("Alan", 2, 300, 30, false));
         staffToHire.put("Bob", new Technician("Bob", 2, 100, 30, false));
         staffToHire.put("Ceri", new Technician("Ceri", 4, 250, 40, true));
@@ -437,7 +434,6 @@ public class ITManager  implements Management
         staffToHire.put("Gita", new Programmer("Gita", 2, 200, 20));
         staffToHire.put("Hela", new Technician("Hela", 8, 450, 40, false));
         staffToHire.put("Ian", new Analyst("Ian", 4, 300, 60, false));
-        System.out.println("Setting all staff available");
 
         for (Staff makeAvailable : staffToHire.values()) {
             makeAvailable.setState(StaffState.AVAILABLE);
@@ -449,9 +445,7 @@ public class ITManager  implements Management
     private void setupTasks()
     {
         // add all from the specs
-        
-        System.out.println("Now adding objects to the collections...");
-        
+                
         allJobs.put(0,new Job(100,JobType.DESIGN,10,3,200));
                
         Job job2 = new Job(101,JobType.HARDWARE,20,3,150);
