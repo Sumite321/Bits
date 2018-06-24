@@ -268,7 +268,19 @@ public class ITManager  implements Management
         return found;
     }
 
-    
+    private Staff getStaffTeamReference(String name) {
+
+        Staff toReturn = null;
+        
+        if (isInTeam(name)) {
+            for (Staff s : teamMembers.values()) {
+                if (s.getUName().equals(name)) {
+                    toReturn = s;
+                }
+            }
+        }
+        return toReturn;
+    }
     /**Returns a String representation of the staff in the project team
      * (including those on holiday), or the message "No staff hired"
      * @return a String representation of the staff in the project team
@@ -374,7 +386,7 @@ public class ITManager  implements Management
                     bestChoice.put(1,toDeduct);
                     toRemove = staff;
                      }
-                } else {
+                } else  {
                     message = "No staff available";
                     toDeduct = jobRef.getPenalty() * -1.0;
                     bestChoice.put(3,toDeduct);
@@ -416,7 +428,17 @@ public class ITManager  implements Management
      * @param the name of the staff rejoining the team after holiday
      */
     public String staffRejoinTeam(String name){
-        return "";
+        
+        String message = "";
+        if(isInTeam(name)){
+          getStaffTeamReference(name).setState(StaffState.WORKING);
+          message = "Status changed to Working";
+       }else{
+          message = "Staff does not exist";
+        
+        }
+        
+        return message;
     }
     
      //****************** private methods for Task 6.1 functionality*******************
